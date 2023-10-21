@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <style>
+        /* Add your CSS styles here for the cart page */
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            background-color: #bb3311;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        ul#cart-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+
+        li.cart-item {
+            display: flex;
+            justify-content: space-between; /* Align content evenly horizontally */
+            align-items: center; /* Center items vertically */
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+}
+
+        p {
+            text-align: right;
+            margin-right: 30px;
+        }
+
+        .remove-button {
+                
+                
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <ul id="cart-list">
+        <!-- Cart items will be displayed here as list items -->
+    </ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+    <a href="index.html">
+        <button id="Back-to-Menu" data-name="Back to Menu" >Back to Menu</button>
+    </a>
+
+    <div id="checkout-modal">
+    <div id="checkout-form">
+    
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            
+            <!--<label for="delivery-date">Delivery Date:</label>
+            <input type="date" id="delivery-date" required>-->
+            
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash">Cash on Delivery</option>
+            </select>
+            
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var cartData = JSON.parse(localStorage.getItem("cartData"));
+    var cartList = document.getElementById("cart-list");
+    var cartTotal = document.getElementById("cart-total");
+
+    function updateCart() {
+        cartList.innerHTML = ""; // Clear the cart list
+
+        var total = 0;
+
+        if (cartData) {
+            cartData.forEach(function (item, index) {
+                var listItem = document.createElement("li");
+                var removeButton = document.createElement("button");
+
+                // Create a unique ID for each list item
+                listItem.id = "cart-item-" + index;
+                listItem.classList.add("cart-item"); // Add the "cart-item" class
+
+                listItem.textContent = item.name + " - $" + item.price.toFixed(2);
+
+                removeButton.textContent = "Remove";
+                removeButton.classList.add("remove-button");
+
+                // Add a click event listener to the Remove button
+                removeButton.addEventListener("click", function () {
+                    cartData.splice(index, 1); // Remove the item from the cart data
+                    updateCart(); // Refresh the cart display
+                    updateCartTotal(); // Update the total
+                    localStorage.setItem("cartData", JSON.stringify(cartData)); // Update the cart data in local storage
+                });
+
+                listItem.appendChild(removeButton);
+                cartList.appendChild(listItem);
+
+                total += item.price;
+            });
+        }
+
+        cartTotal.textContent = "$" + total.toFixed(2);
+    }
+
+    updateCart();
+
+    function updateCartTotal() {
+        var total = 0;
+
+        if (cartData) {
+            cartData.forEach(function (item) {
+                total += item.price;
+            });
+        }
+
+        cartTotal.textContent = "$" + total.toFixed(2);
+    }
+
+    // Handle form submission
+    document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("name").value;
+        var address = document.getElementById("address").value;
+        var paymentMethod = document.getElementById("payment-method").value;
+
+        // Clear the cart data
+        cartData = [];
+        localStorage.setItem("cartData", JSON.stringify(cartData)); // Update the cart data in local storage
+        updateCart(); // Refresh the cart display
+        updateCartTotal(); // Update the total
+
+        // Create the success message with form information
+        var successMessage = document.createElement("p");
+        successMessage.textContent = "Order placed successfully!";
+        successMessage.textContent += "\nName: " + name;
+        successMessage.textContent += "\nAddress: " + address;
+        successMessage.textContent += "\nPayment Method: " + paymentMethod;
+        document.getElementById("checkout-form").appendChild(successMessage);
+    });
+
+
+
+
+
+
+
+});
+
+
+
+
+</script>
+
