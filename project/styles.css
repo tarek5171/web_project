@@ -1,0 +1,551 @@
+
+       /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #bb3311;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        #signupBtn{
+            background-color: #bb3311;
+            color: white;
+        }
+        #signinBtn{
+            background-color: #bb3311;
+            color: white;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #reservation-form {
+            background-color: #bb3311;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute; /* Use absolute positioning */
+            top: 400px; /* Adjust top position as needed */
+            left: 500px; /* Adjust left position as needed */
+        }
+
+        #menu-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #menu-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        /* Navigation bar styles */
+        #navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        /* Shopping Cart styles */
+        #cart {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #bb3311;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 50%;
+        }
+
+        #cart-image {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            
+        }
+/* ... Your existing CSS ... */
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label,
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+#contact-form input[type="submit"] {
+    cursor: pointer;
+    background-color: #bb3311;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #992211;
+}
+
+/* About page styles */
+#about-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background */
+    border-radius: 5px;   /* Matching with your container styling */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Also matching with your existing shadow */
+}
+
+#about-container h2 {
+    text-align: center;
+    font-size: 2em;
+    border-bottom: 2px solid white;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+#about-container p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+/* Careers page styles */
+#careers-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 5px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#careers-container h2 {
+    text-align: center;
+    font-size: 2em;
+    border-bottom: 2px solid #bb3311;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.job-section {
+    margin-bottom: 40px;
+}
+
+.job-section h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #bb3311;
+}
+
+.job-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-section li {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+.apply-button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #bb3311;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.apply-button:hover {
+    background-color: #992211;
+}
+
+/* Blog page styles */
+#blog-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 5px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-post h2 {
+    color: #bb3311;
+    font-size: 1.8em;
+}
+
+.blog-post ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.blog-post footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.read-more {
+    float: right;
+    background-color: #bb3311;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.read-more:hover {
+    background-color: #992211;
+}
+
+.image-gallery img {
+    width: 23%;
+    margin: 1%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Clearing float for read-more */
+.blog-post::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Signup Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 60%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+
+.modal-header {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #bb3311;
+}
+
+.close-btn {
+    color: #777;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="email"],
+.modal-body input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-body input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #bb3311;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-body input[type="submit"]:hover {
+    background-color: #992211;
+}
+
+.modal-body p {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.modal-body a {
+    color: #bb3311;
+}
+
+/* Modal Styles */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-content {
+    position: relative;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    background-color: #fefefe;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-header {
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-body input[type="submit"] {
+    width: 100%;
+    background-color: #bb3311;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-body input[type="submit"]:hover {
+    background-color: #992211;
+}
+
+#account-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.account-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.account-buttons button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #bb3311;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.account-buttons button:hover {
+    background-color: #992211;
+}
+
+.account-section {
+    margin-bottom: 30px;
+}
+
+.account-section h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.account-section input[type="text"],
+.account-section input[type="email"],
+.account-section input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.account-section button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.account-section button:hover {
+    background-color: #555;
+}
+
+.account-section-content {
+    display: none;
+}
+
+/* Gift Card Section Styles */
+
+.giftcard-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.amount {
+    padding: 10px 15px;
+    background-color: #bb3311;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.amount:hover {
+    background-color: #992211;
+}
+
+.gift-message,
+.gift-recipient,
+.payment-details {
+    margin-top: 20px;
+}
+
+#giftcards label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#giftcards input[type="text"],
+#giftcards input[type="number"],
+#giftcards input[type="tel"],
+#giftcards textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pay-send-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #bb3311;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pay-send-btn:hover {
+    background-color: #992211;
+}
+

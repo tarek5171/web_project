@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Menu - BBQ Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('image4.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="blog.html">Blog</a>
+    <a href="myaccount.html">My Account</a>
+    <button id="signupBtn">Sign Up</button>
+    <button id="signinBtn">Sign In</button>
+    <a href="cart.html">
+            <img id="cart-image" src="image5.png" width="35" height="25">
+        </a>
+        <span id="cart">0</span>
+    </div>
+
+    <div id="container">
+        <h2 id="menu">Menu</h2>
+        <ul id="menu-list">
+            <li id="menu-item">
+                <h3>BBQ Ribs</h3>
+                <p>Delicious, tender ribs slow-cooked to perfection.</p>
+                <p>Price: $15.99</p>
+                <button class="add-to-cart" data-name="BBQ Ribs" data-price="15.99">Add to Cart</button>
+            </li>
+
+            <li id="menu-item">
+                <h3>Pulled Pork Sandwich</h3>
+                <p>Slow-cooked pulled pork served in a fresh bun.</p>
+                <p>Price: $10.99</p>
+                <button class="add-to-cart" data-name="Pulled Pork Sandwich" data-price="10.99">Add to Cart</button>
+            </li>
+
+            <li id="menu-item">
+                <h3>Brisket Platter</h3>
+                <p>Sliced brisket served with your choice of sides.</p>
+                <p>Price: $17.99</p>
+                <button class="add-to-cart" data-name="Brisket Platter" data-price="17.99">Add to Cart</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Shopping Cart
+        var cart = [];
+        var cartCount = document.getElementById("cart");
+
+        function updateCartCount() {
+            cartCount.textContent = cart.length;
+        }
+
+        var addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+        addToCartButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                var itemName = button.getAttribute("data-name");
+                var itemPrice = parseFloat(button.getAttribute("data-price"));
+
+                cart.push({ name: itemName, price: itemPrice });
+                updateCartCount();
+            });
+        });
+
+        // Navigation to the Cart Page
+        var cartImage = document.getElementById("cart-image");
+        cartImage.addEventListener("click", function () {
+            // Store the cart data in local storage to retrieve it on the cart page
+            localStorage.setItem("cartData", JSON.stringify(cart));
+
+            // Navigate to the cart page
+            window.location.href = "cart.html";
+        });
+        
+        // Restore cart from local storage
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve the cart data from localStorage
+            var storedCart = JSON.parse(localStorage.getItem("cartData"));
+
+            // Check if there's stored cart data and update the cart
+            if (storedCart && Array.isArray(storedCart)) {
+                cart = storedCart;
+                updateCartCount();
+            }
+        });
+    </script>
+</body>
+</html>
