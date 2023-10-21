@@ -3,91 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>BBQ Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add your CSS styles here */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Hide scrollbars */
         }
 
-        header {
-            background-color: #bb3311;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
+        #slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
-        h1 {
-            font-size: 36px;
+        #slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: imageSlider 9s linear infinite;
         }
 
-        #container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #menu-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        #menu-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px 0;
-        }
-
-        /* Navigation bar styles */
-        #navbar {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        #navbar a {
-            float: left;
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        #navbar a:hover {
-            background-color: #ddd;
-            color: #333;
-        }
-
-        /* Shopping Cart styles */
-        #cart {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            background-color: #bb3311;
-            color: #fff;
-            padding: 2px 6px;
-            border-radius: 50%;
-        }
-
-        #cart-image {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            
-        }
+        
     </style>
 </head>
 <body>
     <div id="navbar">
         <a href="#">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#contact">Contact</a>
-        <a href="cart.html">
+        <a href="menu.html">Menu</a>
+    	<a href="contact.html">Contact</a>
+    	<a href="about.html">About</a>
+    	<a href="careers.html">Careers</a>
+    	<a href="blog.html">Blog</a>
+    	<a href="myaccount.html">My Account</a>
+    	<button id="signupBtn">Sign Up</button>
+    	<button id="signinBtn">Sign In</button>
+    	<a href="cart.html">
             <img id="cart-image" src="image5.png" width="35" height="25">
         </a>
         <span id="cart">0</span>
@@ -97,35 +51,51 @@
         <h1>Welcome to BBQ Restaurant</h1>
     </header>
 
-    <div id="container">
-        <h2 id="menu">Menu</h2>
-        <ul id="menu-list">
-            <li id="menu-item">
-                <h3>BBQ Ribs</h3>
-                <p>Delicious, tender ribs slow-cooked to perfection.</p>
-                <p>Price: $15.99</p>
-                <button class="add-to-cart" data-name="BBQ Ribs" data-price="15.99">Add to Cart</button>
-            </li>
 
-            <li id="menu-item">
-                <h3>Pulled Pork Sandwich</h3>
-                <p>Slow-cooked pulled pork served in a fresh bun.</p>
-                <p>Price: $10.99</p>
-                <button class="add-to-cart" data-name="BBQ Ribs" data-price="15.99">Add to Cart</button>
-            </li>
-
-            <li id="menu-item">
-                <h3>Brisket Platter</h3>
-                <p>Sliced brisket served with your choice of sides.</p>
-                <p>Price: $17.99</p>
-                <button class="add-to-cart" data-name="BBQ Ribs" data-price="15.99">Add to Cart</button>
-            </li>
-        </ul>
-    </div>
 
     <div id="slider">
         <img id="slider-image" src="image1.jpg" alt="BBQ Image 1" width="500" height="200">
     </div>
+
+<!-- Signup Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close-btn">×</span>
+            <h2>CREATE AN ACCOUNT</h2>
+        </div>
+        <div class="modal-body">
+            <form action="#" method="post">
+                <input type="text" name="firstname" placeholder="First Name">
+                <input type="text" name="lastname" placeholder="Last Name">
+		<input type="tel" name="phone" pattern="\+961[0-9]{8}" placeholder="Phone +961xx xxx xxx" required>
+		<input type="email" name="email" placeholder="Email *" required>
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" value="REGISTER">
+            </form>
+            <p>By registering you agree to our <a href="#">Privacy policy</a> and <a href="#">terms</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Sign-in Modal -->
+<div id="signinModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>MY ACCOUNT</h2>
+        </div>
+        <div class="modal-body">
+            <form id="signinForm">
+                <input type="text" name="email_or_mobile" placeholder="Email or mobile" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="LOGIN">
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
     <form id="reservation-form">
         <h2>Reservation</h2>
@@ -135,7 +105,7 @@
         <label for="email">Email:</label>
         <input type="email" id="email" required>
         
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" style="background-color: darkgray;">
     </form>
 
     <script>
@@ -164,48 +134,52 @@
             }
         });
 
+	// Get the modal
+	var modal = document.getElementById("signupModal");
 
-        // Shopping Cart
-        var cart = [];
-        var cartCount = document.getElementById("cart");
+	// Get the button that opens the modal (Assuming you have one)
+	var btn = document.getElementById("signupBtn");
 
-        function updateCartCount() {
-            cartCount.textContent = cart.length;
-        }
+	// Get the close button
+	var span = document.getElementsByClassName("close-btn")[0];
 
-        var addToCartButtons = document.querySelectorAll(".add-to-cart");
+	// When the user clicks on the button, open the modal 
+	btn.onclick = function() {
+	    modal.style.display = "block";
+	}
 
-        addToCartButtons.forEach(function (button) {
-            button.addEventListener("click", function () {
-                var itemName = button.getAttribute("data-name");
-                var itemPrice = parseFloat(button.getAttribute("data-price"));
+	// When the user clicks on the close button, close the modal
+	span.onclick = function() {
+   	 modal.style.display = "none";
+	}
 
-                cart.push({ name: itemName, price: itemPrice });
-                updateCartCount();
-            });
-        });
+	// When the user clicks outside of the modal, close it
+	window.onclick = function(event) {
+    	if (event.target == modal) {
+       	 modal.style.display = "none";
+   	 }
+	}
 
-                         // Navigation to the Cart Page
-            var cartImage = document.getElementById("cart-image");
-            cartImage.addEventListener("click", function () {
-                // Store the cart data in local storage to retrieve it on the cart page
-                localStorage.setItem("cartData", JSON.stringify(cart));
+var modal = document.getElementById("signinModal");
+var btn = document.getElementById("signinBtn");
+var span = document.getElementsByClassName("close")[0];
 
-                // Navigate to the cart page
-                window.location.href = "cart.html";
-            });
-            // restore cart from local storage
-                document.addEventListener("DOMContentLoaded", function () {
-                    // Retrieve the cart data from localStorage
-                    var storedCart = JSON.parse(localStorage.getItem("cartData"));
+btn.onclick = function() {
+    modal.style.display = "block";
+}
 
-                    // Check if there's stored cart data and update the cart
-                    if (storedCart && Array.isArray(storedCart)) {
-                        cart = storedCart;
-                        updateCartCount();
-                    }
-                });
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
-                </script>
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+      </script>
 </body>
 </html>

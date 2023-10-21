@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('image3.jpg'); background-size: cover; background-repeat: no-repeat;">
+
+    <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="blog.html">Blog</a>
+        <a href="myaccount.html">My Account</a>
+        <button id="signupBtn">Sign Up</button>
+        <button id="signinBtn">Sign In</button>
+        <a href="cart.html">
+            <img id="cart-image" src="image5.png" width="35" height="25">
+        </a>
+        <span id="cart">0</span>
+    </div>
+
+    <div id="account-container">
+
+        <div class="account-buttons">
+            <button>My Favorites</button>
+            <button>My Orders</button>
+            <button>Gift Cards</button>
+        </div>
+
+        <h1>My Account</h1>
+
+        <section class="account-section">
+            <h2>My Addresses</h2>
+            <p>[User's Address Here]</p>
+        </section>
+
+        <section class="account-section">
+            <h2>My Orders</h2>
+            <p>[Past Orders List Here]</p>
+        </section>
+
+        <section class="account-section">
+            <h2>Username</h2>
+            <input type="text" value="[Username]">
+            <h2>Email</h2>
+            <input type="email" value="[Email]">
+            <h2>Mobile</h2>
+            <input type="text" value="[Mobile Number]">
+            <button>SAVE</button>
+        </section>
+
+        <section class="account-section">
+            <h2>Your Password</h2>
+            <label for="old-password">Old Password</label>
+            <input type="password" id="old-password">
+            <label for="new-password">New Password *</label>
+            <input type="password" id="new-password">
+            <label for="confirm-password">Confirm New Password *</label>
+            <input type="password" id="confirm-password">
+            <button>SAVE PASSWORD</button>
+        </section>
+<!-- ... Previous HTML ... -->
+
+<div id="account-content">
+
+    <div id="favorites" class="account-section-content">
+        <!-- Content for Favorites can go here -->
+    </div>
+
+    <div id="orders" class="account-section-content">
+        <!-- Example order; replicate for more orders -->
+        <div class="order">
+            <h3>Order #12345</h3>
+            <p>Date: [Order Date]</p>
+            <p>Items: [Item List]</p>
+            <p>Total: [Total Amount]</p>
+        </div>
+        <!-- ... more orders ... -->
+    </div>
+
+<div id="giftcards" class="account-section-content">
+    <h2>Choose a gift card amount</h2>
+    <p>Upon purchase, we will send a gift code to your recipient to order online.</p>
+
+    <div class="giftcard-amounts">
+        <button class="amount">$100.00</button>
+        <button class="amount">$50.00</button>
+        <button class="amount">$25.00</button>
+        <button class="amount">$10.00</button>
+        <label for="custom-amount">Custom Amount:</label>
+        <input type="number" id="custom-amount" placeholder="$">
+    </div>
+
+    <div class="gift-message">
+        <label for="message">Add a message:</label>
+        <textarea id="message"></textarea>
+    </div>
+
+    <div class="gift-recipient">
+        <label for="recipient-mobile">Recipient mobile:</label>
+        <input type="tel" id="recipient-mobile" placeholder="Recipient's Mobile Number">
+    </div>
+
+    <div class="payment-details">
+        <label for="card-number">Enter Card Number:</label>
+        <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="XXX">
+    </div>
+
+    <button class="pay-send-btn">PAY AND SEND</button>
+</div>
+
+
+    <!-- ... Rest of the My Account sections ... -->
+
+</div>
+
+<!-- ... Rest of the HTML ... -->
+
+
+    </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const accountButtons = document.querySelectorAll('.account-buttons button');
+        const accountSections = document.querySelectorAll('.account-section-content');
+
+        accountButtons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                // Hide all sections
+                accountSections.forEach(section => section.style.display = 'none');
+
+                // Show the clicked section
+                accountSections[index].style.display = 'block';
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
